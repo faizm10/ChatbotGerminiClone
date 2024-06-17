@@ -12,7 +12,7 @@ const Main = () => {
     setInput,
     input,
   } = useContext(Context); //display result on main component which is in this file
-
+let ent;
   return (
     <div className="main">
       <div className="nav">

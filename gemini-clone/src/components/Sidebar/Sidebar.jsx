@@ -23,21 +23,19 @@ export const Sidebar = () => {
           <img src={assets.plus_icon} alt="New Chat" />
           {extended ? <p>New Chat</p> : null}
         </div>
-        {extended 
-          ?<div className="recent">
+        {extended && (
+          <div className="recent">
             <p className="recent-title">Recent</p>
-            {prevPrompts.map((item,index)=>{
-              return(
-                <div onClick={()=> loadPrompt(item)} className="recent-entry">
+            {prevPrompts && prevPrompts.map((item, index) => {
+              return (
+                <div onClick={() => loadPrompt(item)} className="recent-entry">
                   <img src={assets.message_icon} alt="" />
-                  <p>{item.slice(0,18)}...</p>
+                  <p>{item.slice(0, 18)}...</p>
                 </div>
-              )
+              );
             })}
-            
           </div>
-         : null
-      }
+        )}
       </div>
       <div className="bottom">
         <div className="bottom-item recent-entry">
